@@ -15,12 +15,13 @@ namespace ElmanGameDevTools.TreeCutting
         [Header("Detection Debug")]
         [SerializeField] private bool detectTreeContinuously = true;
         [SerializeField] private bool logTreeDetected = true;
+        [SerializeField] private bool logTreeLost = true;
         [SerializeField] private bool logAxeHitTree = true;
 
         [Header("Debug Ray")]
         [SerializeField] private bool drawDebugRay = true;
 
-        private TreeCuttable _currentDetectedTree;
+        private TreeCuttableSliced _currentDetectedTree;
 
         private void Awake()
         {
@@ -58,10 +59,15 @@ namespace ElmanGameDevTools.TreeCutting
 
         private void DetectTreeInFront()
         {
-            TreeCuttable detectedTree = GetTreeFromCameraRay(out _);
+            TreeCuttableSliced detectedTree = GetTreeFromCameraRay(out _);
 
             if (detectedTree == _currentDetectedTree)
                 return;
+
+            if (_currentDetectedTree != null && detectedTree == null && logTreeLost)
+            {
+                Debug.Log($"Tree lost: {_currentDetectedTree.name}", _currentDetectedTree);
+            }
 
             _currentDetectedTree = detectedTree;
 
@@ -73,10 +79,15 @@ namespace ElmanGameDevTools.TreeCutting
 
         private void TryCutTree()
         {
-            TreeCuttable cuttableTree = GetTreeFromCameraRay(out RaycastHit hit);
+            TreeCuttableSliced cuttableTree = GetTreeFromCameraRay(out RaycastHit hit);
 
             if (cuttableTree == null)
+            {
+                if (logAxeHitTree)
+                    Debug.Log("Axe impact happened, but no cuttable tree was hit.", this);
+
                 return;
+            }
 
             if (logAxeHitTree)
             {
@@ -86,7 +97,7 @@ namespace ElmanGameDevTools.TreeCutting
             cuttableTree.TryCut(transform, hit.point);
         }
 
-        private TreeCuttable GetTreeFromCameraRay(out RaycastHit hit)
+        private TreeCuttableSliced GetTreeFromCameraRay(out RaycastHit hit)
         {
             hit = default;
 
@@ -108,7 +119,7 @@ namespace ElmanGameDevTools.TreeCutting
                 return null;
             }
 
-            return hit.collider.GetComponentInParent<TreeCuttable>();
+            return hit.collider.GetComponentInParent<TreeCuttableSliced>();
         }
     }
 }

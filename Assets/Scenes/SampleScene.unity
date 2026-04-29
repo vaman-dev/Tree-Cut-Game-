@@ -466,7 +466,7 @@ Transform:
   m_GameObject: {fileID: 956409214}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.486, z: 0}
+  m_LocalPosition: {x: 0, y: 0.486, z: -0.015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -518,7 +518,7 @@ Transform:
   m_GameObject: {fileID: 1126756723}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.33, z: 0}
+  m_LocalPosition: {x: 0, y: 0.33, z: -0.015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -645,9 +645,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 628542204431710698, guid: 7a3762142d62d9748a5668f40c3863e1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2051534844748828089, guid: 7a3762142d62d9748a5668f40c3863e1, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2051534844748828089, guid: 7a3762142d62d9748a5668f40c3863e1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3342471199583357813, guid: 7a3762142d62d9748a5668f40c3863e1, type: 3}
       propertyPath: m_Layer
@@ -697,6 +705,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 5459810839939464508, guid: 7a3762142d62d9748a5668f40c3863e1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6988332470793563979, guid: 7a3762142d62d9748a5668f40c3863e1, type: 3}
       propertyPath: m_Name
       value: URP_Tree_1 Variant
@@ -715,6 +727,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4128083386759506464, guid: 7a3762142d62d9748a5668f40c3863e1, type: 3}
   m_PrefabInstance: {fileID: 1339200712}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1349312019
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1349312020}
+  m_Layer: 6
+  m_Name: 'SlicePlane              '
+  m_TagString: Untagged
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1349312020
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349312019}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.399, z: -0.015}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1848935215}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1499378565 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1894024275419416941, guid: 129063a2dfa704f4c814a15d5c93ca52, type: 3}
@@ -752,7 +795,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1550799276}
   m_Layer: 6
-  m_Name: Pivot
+  m_Name: 'TreeVisual              '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -774,6 +817,11 @@ Transform:
   - {fileID: 1339200713}
   m_Father: {fileID: 1848935215}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1693125123 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3342471199583357813, guid: 7a3762142d62d9748a5668f40c3863e1, type: 3}
+  m_PrefabInstance: {fileID: 1339200712}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1848935214
 GameObject:
   m_ObjectHideFlags: 0
@@ -785,7 +833,7 @@ GameObject:
   - component: {fileID: 1848935215}
   - component: {fileID: 1848935216}
   m_Layer: 6
-  m_Name: TreeParent
+  m_Name: CuttableTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -805,6 +853,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1550799276}
+  - {fileID: 1349312020}
   - {fileID: 956409215}
   - {fileID: 1126756724}
   - {fileID: 1953291718}
@@ -819,18 +868,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 1848935214}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fa484692572ea8428b803442d50aea2, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d7826d72ba8bc647942a5aca4cb3a0d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ElmanGameDevTools.TreeCutting.TreeCuttable
-  fallPivot: {fileID: 1550799276}
+  m_EditorClassIdentifier: Assembly-CSharp::ElmanGameDevTools.TreeCutting.TreeCuttableSliced
+  sliceTarget: {fileID: 1693125123}
+  slicePlane: {fileID: 1349312020}
+  intersectionMaterial: {fileID: 0}
   notchVisual: {fileID: 1126756724}
   predictionArrow: {fileID: 1953291718}
   maxHealth: 5
   trunkRadius: 0.45
   cutHeight: 1.1
   warningDelay: 1.2
-  fallDuration: 2
-  maxFallAngle: 90
+  fallForce: 4
+  fallTorque: 8
+  upperPartMass: 25
+  separationDistance: 0.35
+  initialPushForce: 2.5
+  usePrimitiveColliderForFallingPart: 1
+  removeExistingMeshColliders: 1
+  fallingCapsuleRadius: 0.22
+  fallingCapsuleHeight: 3.8
+  fallingCapsuleCenter: {x: 0, y: 2.24, z: 0}
   woodChipParticles: {fileID: 0}
   audioSource: {fileID: 0}
   cutClip: {fileID: 0}
@@ -857,6 +916,7 @@ MonoBehaviour:
     m_Bits: 64
   detectTreeContinuously: 1
   logTreeDetected: 1
+  logTreeLost: 1
   logAxeHitTree: 1
   drawDebugRay: 1
 --- !u!1 &1953291717
@@ -884,7 +944,7 @@ Transform:
   m_GameObject: {fileID: 1953291717}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
